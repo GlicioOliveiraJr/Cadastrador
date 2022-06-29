@@ -10,9 +10,9 @@ wks = gc.open_by_key('1nmj3ij21U0cSY5L1q76Oy0hBBG8z7aYT7hMiJjo1SoU')
 planilha = wks.get_worksheet(0)
 
 
-
+linha = 2
 while True:
-    linha = 2
+    
 
     dados = planilha.row_values(linha)
     #print(dados)
@@ -40,11 +40,12 @@ while True:
         print(telefone)
         obs = dados[10]
         print(obs)
+        linha = linha + 1
         
-    linha = linha+1
-    if linha > 3:
-        break
-
+    
+    print("PARTE 2")
+    
+  
 
 
    
