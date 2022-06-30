@@ -138,6 +138,8 @@ while True:
         time.sleep(3)      
         navegador.find_element(By.XPATH, '//*[@id="navbar-collapse-50377"]/ul/li[7]/a').click()
         time.sleep(3)
+        navegador.find_element(By.XPATH,'//*[@id="d50377c163"]').send_keys(nome_da_contabilidade)
+        time.sleep(3)
         navegador.find_element(By.XPATH,'//*[@id="d50377c163"]').send_keys(sdr)  
         time.sleep(3)
         navegador.find_element(By.XPATH, '//*[@id="dialogToolbar-50377"]/a/div[3]').click()
