@@ -42,6 +42,14 @@ planilha = wks.get_worksheet(0)
 
 linha = 2
 
+'''while True:
+    dados = planilha.row_values(linha)
+    if dados[11] != 'Ok':
+        planilha.update_acell(f'L{linha}', '.')
+        linha += 1
+    else:
+        #Falta continuar a logica'''
+
 
 #Inicio do loop
 while True:    
