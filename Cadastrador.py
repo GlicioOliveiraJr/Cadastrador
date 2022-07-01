@@ -94,7 +94,7 @@ while True:
     #O CNPJ ja foi cadastrado
     try:
         if navegador.find_element(By.XPATH, '/html/body/ul[6]/li/div/div[3]/button'):
-            print('Achou!')
+            print('Ja cadastrado!')
             time.sleep(2)
             navegador.find_element(By.XPATH, '/html/body/ul[6]/li/div/div[3]/button').click()
             time.sleep(2)
@@ -105,7 +105,7 @@ while True:
             
     #O CNPJ não esta cadastrado
     except:        
-        print('Nao achou!')
+        print('Nao cadastrado!')
         time.sleep(10) 
         navegador.find_element(By.XPATH, '//*[@id="d50874c3g"]/tbody/tr[1]').click()
         time.sleep(2)
