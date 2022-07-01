@@ -33,7 +33,6 @@ pyautogui.alert("Coloque o autenticador e precione enter, depois clique em Ok.")
 pyautogui.alert('Quando abrir a tela de cadastro, pressione "OK" ')
 time.sleep(5)
 
-
 #Integrando com a planilha
 scope = ['https://spreadsheets.google.com/feeds']
 credentials = ServiceAccountCredentials.from_json_keyfile_name('credenciais.json', scope)
@@ -42,17 +41,14 @@ wks = gc.open_by_key('1nmj3ij21U0cSY5L1q76Oy0hBBG8z7aYT7hMiJjo1SoU')
 planilha = wks.get_worksheet(0)
 linha = 2
 
-
-
-
 #Inicio do loop
 while True:    
     dados = planilha.row_values(linha)
 
+    #Verificando se o contato esta com "Ok"
     while True:
         status = planilha.cell(linha,12)
         status = str(status)
-        print(status)
         if status == "<Cell R2C12 'Ok'>":
             linha += 1
             print(f'Linha {linha}')
@@ -60,9 +56,7 @@ while True:
         if status != "<Cell R2C12 'Ok'>":
             break
     
-    #Colocando dados da planilha nas variaveis
-     
-    print(f'Linha {linha}')      
+    #Colocando dados da planilha nas variaveis      
     sdr = dados[0]
     print(sdr)
     cnpj_da_contabilidade = dados[1]
@@ -86,7 +80,6 @@ while True:
     obs = dados[10]
     print(obs)
     linha += 1
-        
 
     #Cadastrando contato
     navegador.find_element(By.XPATH, '//*[@id="dialogToolbar-50370"]/a[2]/div[3]').click()
@@ -97,11 +90,10 @@ while True:
     time.sleep(3)
     navegador.find_element(By.XPATH, '//*[@id="dialogContent-50602"]/div/button').click()
     time.sleep(5)
+    
+    #O CNPJ ja foi cadastrado
     try:
         if navegador.find_element(By.XPATH, '/html/body/ul[6]/li/div/div[3]/button'):
-            
-            
-            #//*[@id="noty_topCenter_layout_container"]
             print('Achou!')
             time.sleep(2)
             navegador.find_element(By.XPATH, '/html/body/ul[6]/li/div/div[3]/button').click()
@@ -115,10 +107,9 @@ while True:
             print('3')
             time.sleep(3)
             
-    except:
-        
+    #O CNPJ não esta cadastrado
+    except:        
         print('Nao achou!')
-        #time.sleep(15)       
         time.sleep(10) 
         navegador.find_element(By.XPATH, '//*[@id="d50874c3g"]/tbody/tr[1]').click()
         time.sleep(2)
@@ -184,7 +175,8 @@ while True:
         time.sleep(2)
         navegador.find_element(By.XPATH, '//*[@id="dialogToolbar-50377"]/a/div[3]').click()
         time.sleep(5)
-        #Coloca "Ok" na planilha
+
+        #Coloca "Ok" no status
         planilha.update_acell(f'L{linha-1}', 'Ok')
 
         #Voltando para o inicio
