@@ -23,11 +23,11 @@ time.sleep(5)
 
 #Logando
 pyautogui.alert(' Quando ver a tela de login, pressione "OK" ')
-navegador.find_element(By.XPATH,'//*[@id="email"]').send_keys("")
+navegador.find_element(By.XPATH,'//*[@id="email"]').send_keys()
 time.sleep(1)
 navegador.find_element(By.XPATH,'//*[@id="email"]').send_keys(Keys.ENTER)
 time.sleep (3)
-navegador.find_element(By.XPATH, '//*[@id="current-password"]').send_keys("")
+navegador.find_element(By.XPATH, '//*[@id="current-password"]').send_keys()
 navegador.find_element(By.XPATH, '//*[@id="current-password"]').send_keys(Keys.ENTER)
 pyautogui.alert("Coloque o autenticador e precione enter, depois clique em Ok.")
 pyautogui.alert('Quando abrir a tela de cadastro, pressione "OK" ')
@@ -82,17 +82,18 @@ while True:
     linha += 1
 
     #Cadastrando contato
-    navegador.find_element(By.XPATH, '//*[@id="dialogToolbar-50370"]/a[2]/div[3]').click()
-    time.sleep(3)
-    navegador.find_element(By.XPATH, '//*[@id="d50602c9"]').click()  
-    navegador.find_element(By.XPATH,'//*[@id="d50602c9"]').send_keys(cnpj_da_empresa)
-    print(cnpj_da_empresa)
-    time.sleep(3)
-    navegador.find_element(By.XPATH, '//*[@id="dialogContent-50602"]/div/button').click()
-    time.sleep(5)
-    
-    #O CNPJ ja foi cadastrado
     try:
+        navegador.find_element(By.XPATH, '//*[@id="dialogToolbar-50370"]/a[2]/div[3]').click()
+        time.sleep(3)
+        navegador.find_element(By.XPATH, '//*[@id="d50602c9"]').click()  
+        navegador.find_element(By.XPATH,'//*[@id="d50602c9"]').send_keys(cnpj_da_empresa)
+        print(cnpj_da_empresa)
+        time.sleep(3)
+        navegador.find_element(By.XPATH, '//*[@id="dialogContent-50602"]/div/button').click()
+        time.sleep(5)
+        
+        #O CNPJ ja foi cadastrado
+        
         if navegador.find_element(By.XPATH, '/html/body/ul[6]/li/div/div[3]/button'):
             print('Ja cadastrado!')
             time.sleep(2)
@@ -104,7 +105,8 @@ while True:
             time.sleep(3)
             
     #O CNPJ não esta cadastrado
-    except:        
+    except:
+
         print('Nao cadastrado!')
         time.sleep(10) 
         navegador.find_element(By.XPATH, '//*[@id="d50874c3g"]/tbody/tr[1]').click()
@@ -180,3 +182,4 @@ while True:
         time.sleep(2)        
         navegador.find_element(By.XPATH, '//*[@id="dialog-50369"]/div[1]/button').click()
         time.sleep(2)
+     
