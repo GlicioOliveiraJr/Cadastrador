@@ -97,14 +97,10 @@ while True:
             print('Achou!')
             time.sleep(2)
             navegador.find_element(By.XPATH, '/html/body/ul[6]/li/div/div[3]/button').click()
-
-            print('1')
             time.sleep(2)
             navegador.find_element(By.XPATH, '//*[@id="dialog-50602"]/div[1]/button').click()
-            print('2')
             time.sleep(3)
             navegador.find_element(By.XPATH, '//*[@id="dialog-50370"]/div[1]/button').click()
-            print('3')
             time.sleep(3)
             
     #O CNPJ não esta cadastrado
