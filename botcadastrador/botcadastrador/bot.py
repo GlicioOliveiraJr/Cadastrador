@@ -43,7 +43,7 @@ class Bot(DesktopBot):
         planilha = wks.get_worksheet(0)
         linha = 2
 
-        #Inicio do loop
+        #Inicio do loop ok
         while True:    
             dados = planilha.row_values(linha)
 
