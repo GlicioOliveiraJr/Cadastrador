@@ -1,0 +1,14 @@
+MANIFEST.in
+README.md
+VERSION
+requirements.txt
+setup.py
+botcadastrador/__init__.py
+botcadastrador/__main__.py
+botcadastrador/bot.py
+botcadastrador.egg-info/PKG-INFO
+botcadastrador.egg-info/SOURCES.txt
+botcadastrador.egg-info/dependency_links.txt
+botcadastrador.egg-info/requires.txt
+botcadastrador.egg-info/top_level.txt
+botcadastrador/resources/start.png
