@@ -26,18 +26,18 @@ class Bot(DesktopBot):
 
         #Logando
         pyautogui.alert(' Quando ver a tela de login, pressione "OK" ')
-        navegador.find_element(By.XPATH,'//*[@id="email"]').send_keys('')
+        navegador.find_element(By.XPATH,'//*[@id="email"]').send_keys('junior.oliveira@omie.com.vc')
         time.sleep(1)
         navegador.find_element(By.XPATH,'//*[@id="email"]').send_keys(Keys.ENTER)
         time.sleep (3)
-        navegador.find_element(By.XPATH, '//*[@id="current-password"]').send_keys('')
+        navegador.find_element(By.XPATH, '//*[@id="current-password"]').send_keys('Glicio@03080308')
         navegador.find_element(By.XPATH, '//*[@id="current-password"]').send_keys(Keys.ENTER)
         pyautogui.alert("Coloque o autenticador e precione enter, depois clique em Ok.")
         pyautogui.alert('Quando abrir a tela de cadastro, pressione "OK" ')
 
         #Integrando com a planilha
         scope = ['https://spreadsheets.google.com/feeds']
-        credentials = ServiceAccountCredentials.from_json_keyfile_name('credenciais.json', scope)
+        credentials = ServiceAccountCredentials.from_json_keyfile_name(r'C:\Users\glici\Meu Drive\Omie\Junior\Python\Cadastrador\credenciais.json', scope)
         gc = gspread.authorize(credentials)
         wks = gc.open_by_key('1nmj3ij21U0cSY5L1q76Oy0hBBG8z7aYT7hMiJjo1SoU')
         planilha = wks.get_worksheet(0)
