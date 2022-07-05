@@ -26,11 +26,11 @@ class Bot(DesktopBot):
 
         #Logando
         pyautogui.alert(' Quando ver a tela de login, pressione "OK" ')
-        navegador.find_element(By.XPATH,'//*[@id="email"]').send_keys('junior.oliveira@omie.com.vc')
+        navegador.find_element(By.XPATH,'//*[@id="email"]').send_keys('')
         time.sleep(1)
         navegador.find_element(By.XPATH,'//*[@id="email"]').send_keys(Keys.ENTER)
         time.sleep (3)
-        navegador.find_element(By.XPATH, '//*[@id="current-password"]').send_keys('Glicio@03080308')
+        navegador.find_element(By.XPATH, '//*[@id="current-password"]').send_keys('')
         navegador.find_element(By.XPATH, '//*[@id="current-password"]').send_keys(Keys.ENTER)
         pyautogui.alert("Coloque o autenticador e precione enter, depois clique em Ok.")
         pyautogui.alert('Quando abrir a tela de cadastro, pressione "OK" ')
