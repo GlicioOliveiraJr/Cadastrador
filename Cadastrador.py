@@ -202,4 +202,8 @@ while True:
             navegador.find_element(By.XPATH, '//*[@id="dialog-50369"]/div[1]/button').click()
             time.sleep(2)                    
         except:
+<<<<<<< HEAD
             pass
+=======
+            pass
+>>>>>>> 90ed42ceb42f6e38dfb6b3c61dd24d3a7fe1eca7
