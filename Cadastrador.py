@@ -22,7 +22,7 @@ navegador.get('https://app.omie.com.br/gestao/omiexperience-3zc3ae/')
 navegador.maximize_window()
 time.sleep(5)
 
-#Logando
+#Logando a
 pyautogui.alert(' Quando ver a tela de login, pressione "OK" ')
 navegador.find_element(By.XPATH,'//*[@id="email"]').send_keys('junior.oliveira@omie.com.vc')
 time.sleep(1)
